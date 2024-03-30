@@ -3,6 +3,7 @@ Proyecto: Aplicacion para Suscripcion de Seguros
 Autor: Pilar M. Molinelli
 Fecha: 29/03/2024
 Version: 1.0
+Link para video Explicativo: https://youtu.be/HS19xbihYSU
 
 Objetivo:
 
