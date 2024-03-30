@@ -1,0 +1,22 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Eliminar Suscripcion</p>
+
+{%endblock titulo%}
+
+{% block contenido %}
+<h2>ART</h2>
+<form action="" method="POST">
+    {% csrf_token %}   
+    <div class="text-center">     
+        <h3>¿ Esta seguro de querer eliminar su suscripcion ? <p style="color:red">{{ object }}</p> </h3>
+        <br>
+    </div>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary btn-block" value="Confirmar">
+    </div>
+
+</form>
+
+{% endblock contenido %}

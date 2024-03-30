@@ -1,0 +1,67 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Protege tu legado con Seguro de Vida Seguranza Seguros SA. Obtén una cotización personalizada y selecciona la protección ideal para ti</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Tipo Documento</th>
+            <th>N° Documento</th>
+            <th>N° celular</th>
+            <th>Correo Electronico</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for vida in vida_list  %}
+        <tr>
+            <td>{{ vida.id }}</td>
+            <td>{{ vida.nombre }}</td>
+            <td>{{ vida.apellido }}</td>
+            <td>{{ vida.tipo_documento }}</td>
+            <td>{{ vida.numero_doc }}</td>
+            <td>{{ vida.numero_celular }}</td>
+            <td>{{ vida.correo_electronico }}</td>
+            <td>{{ vida.edad }}</td>
+            <td>
+                <a
+                  href="{% url 'vidaUpdate' vida.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'vidaDelete' vida.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>      
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<br>
+
+
+<br>
+
+<br>
+
+<a href= '/home' class="btn btn-light">Volver al Inicio</a>
+
+<br>
+<br>
+
+{%endblock contenido%}
+

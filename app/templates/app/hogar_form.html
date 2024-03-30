@@ -1,0 +1,21 @@
+{% extends "app/index.html" %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Formulario Suscripcion HOGAR</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+    
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Suscribirme">
+</form>
+
+<br>
+
+{% endblock contenido %}

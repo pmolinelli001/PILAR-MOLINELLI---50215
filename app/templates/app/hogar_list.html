@@ -1,0 +1,114 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Protegiendo tu hogar, cuidando lo que más Amamos
+    Obtén una cotización personalizada y selecciona la protección ideal para ti</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Metros Cubiertos</th>
+            <th>Codigo Postal</th>
+            <th>Año</th>
+            <th>Tipo de propiedad</th>
+            <th>Jardin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for hogar in hogar_list  %}
+        <tr>
+            <td>{{ hogar.id }}</td>
+            <td>{{ hogar.metros_cubiertos }}</td>
+            <td>{{ hogar.codigo_postal }}</td>
+            <td>{{ hogar.año }}</td>
+            <td>{{ hogar.tipo_propiedad }}</td>
+            <td>{{ hogar.jardin }}</td>  
+            <td>
+                <a
+                  href="{% url 'hogarUpdate' hogar.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'hogarDelete' hogar.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>            
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<a href= '/hogarCreate' class="btn btn-info">Suscribirme</a>
+
+
+<br>
+<br>
+
+<br>
+
+<a href= '/home' class="btn btn-info">Volver al Inicio</a>
+
+<br>
+<br>
+{%endblock contenido%}
+
+
+{% block resultados_busqueda %}
+{% if resultados_busqueda %}
+<h2>Resultados de la búsqueda para '{{ patron }}'</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Metros Cubiertos</th>
+            <th>Codigo Postal</th>
+            <th>Año</th>
+            <th>Tipo de propiedad</th>
+            <th>Jardin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for hogar in hogar_list  %}
+        <tr>
+            <td>{{ hogar.id }}</td>
+            <td>{{ hogar.metros_cubiertos }}</td>
+            <td>{{ hogar.codigo_postal }}</td>
+            <td>{{ hogar.año }}</td>
+            <td>{{ hogar.tipo_propiedad }}</td>
+            <td>{{ hogar.jardin }}</td>  
+            <td>
+                <a
+                  href="{% url 'hogarUpdate' hogar.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'hogarDelete' hogar.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>            
+        </tr>
+    {% endfor %}
+    </tbody>
+
+
+</table>
+{% else %}
+<p>No se encontraron resultados para '{{ patron }}'.</p>
+{% endif %}
+{% endblock %}

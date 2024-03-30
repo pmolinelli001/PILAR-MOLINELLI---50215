@@ -1,0 +1,112 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Nuestros seguros de autos te respaldan en cada kilómetro. Obtén una cotización personalizada y selecciona la protección ideal para ti</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca del auto</th>
+            <th>Año</th>
+            <th>Precio</th>       
+            <th>Modelo</th>
+            <th>Codigo postal</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for auto in auto_list  %}
+        <tr>
+            <td>{{ auto.id }}</td>  
+            <td>{{ auto.marca_del_auto }}</td>
+            <td>{{ auto.año }}</td>
+            <td>{{ auto.precio }}</td>
+            <td>{{ auto.modelo }}</td>
+            <td>{{ auto.codigo_postal }}</td>
+            <td>
+                <a
+                  href="{% url 'autoUpdate' auto.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'autoDelete' auto.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>                 
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<a href= '/autoCreate' class="btn btn-warning">Suscribirme</a>
+
+
+<br>
+<br>
+
+<br>
+
+<a href= '/home' class="btn btn-warning">Volver al Inicio</a>
+
+<br>
+<br>
+{%endblock contenido%}
+
+
+{% block resultados_busqueda %}
+{% if resultados_busqueda %}
+<h2>Resultados de la búsqueda para '{{ patron }}'</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca del auto</th>
+            <th>Año</th>
+            <th>Precio</th>       
+            <th>Modelo</th>
+            <th>Codigo postal</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for auto in auto_list  %}
+        <tr>
+            <td>{{ auto.id }}</td>  
+            <td>{{ auto.marca_del_auto }}</td>
+            <td>{{ auto.año }}</td>
+            <td>{{ auto.precio }}</td>
+            <td>{{ auto.modelo }}</td>
+            <td>{{ auto.codigo_postal }}</td>
+            <td>
+                <a
+                  href="{% url 'autoUpdate' auto.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'autoDelete' auto.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>                 
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+{% else %}
+<p>No se encontraron resultados para '{{ patron }}'.</p>
+{% endif %}
+{% endblock %}

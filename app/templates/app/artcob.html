@@ -1,0 +1,53 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Tipos de coberturas de ART</p>
+<p class="lead text-white-50 mb-4">Aca te mostramos los planes entre los cuales podes elegir segun tu relacion laboral</p>
+<p class="lead text-white-50 mb-4">Para terminar tu proceso de suscripcion, ahora que tenes toda la informacion comunicate con nosotros al 0810-999-9999 de Lunes a Viernes de 8 a 19hs</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title">Trabajo Independiente</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:</strong>$510 {{ independiente.precio }}</li>
+                        <li><strong>Muerte Accidental:</strong>$1500000 {{ independiente.muerte_accidental }}</li>
+                        <li><strong>Invalidez Parcial/Total Permanente:</strong>$1000000 {{ independiente.invalidez_parcial_total_permanente }}</li>
+                        <li><strong>Gastos Asistencia Médica:</strong>$150000 {{ independiente.gastos_asistencia_medica }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title">Relación de Dependencia</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong>Precio Mensual:</strong> $1000{{ dependencia.precio}}</li>
+                        <li><strong>Muerte Accidental:</strong> $2500000{{ dependencia.muerte_accidental }}</li>
+                        <li><strong>Invalidez Parcial/Total Permanente:</strong> $1500000{{ dependencia.invalidez_parcial_total_permanente }}</li>
+                        <li><strong>Gastos Asistencia Médica:</strong> $250000{{ dependencia.gastos_asistencia_medica }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <a href= '/home' class="btn btn-success">Volver al Inicio</a>
+
+    <br>
+{% endblock contenido %}
+
+

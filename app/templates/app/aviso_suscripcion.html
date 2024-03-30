@@ -1,0 +1,24 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">NO SE PUDO REALIZAR SU SUSCRIPCION</p>
+
+{%endblock titulo%}
+
+{% block contenido %}
+<br>
+
+<p class="color:black" align="center"> ¡Para poder suscribirte, debes estar Iniciar Sesion o Registrarte! </p>
+
+<a href= '/login' class="btn btn-secondary">Iniciar Sesion</a>
+<br>
+<br>
+
+<a href= "/registro" class="btn btn-secondary" >Registrarme</a>
+
+<br>
+<br>
+<a href= "/home" class="btn btn-secondary" >Volver al Inicio</a>
+
+
+{% endblock contenido %}

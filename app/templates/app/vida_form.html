@@ -1,0 +1,20 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">formulario VIDA</p>
+<p class="lead text-white-50 mb-4">Ingrese sus datos y sera contactado por un representante para ofrecerle nuestra cobertura</p>
+{%endblock titulo%}
+
+{%block contenido%}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table }}
+    </TABLE>
+    <input type="submit" value="Enviar">
+</form>
+
+<br>
+<br>
+
+{%endblock contenido%}

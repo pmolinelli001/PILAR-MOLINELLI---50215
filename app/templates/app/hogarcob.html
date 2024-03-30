@@ -1,0 +1,121 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Tipos de coberturas de HOGAR</p>
+<p class="lead text-white-50 mb-4">Para terminar tu proceso de suscripcion, ahora que tenes toda la informacion comunicate con nosotros al 0810-999-9999 de Lunes a Viernes de 8 a 19hs</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-black">
+                    <h3>Departamento Dos Ambientes</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:510</strong> {{ departamento_dos_amb.precio }}</li>
+                        <li><strong>Incendio:1500000</strong> {{ departamento_dos_amb.incendio }}</li>
+                        <li><strong>Catastrofe Natural:1000000</strong> {{ departamento_dos_amb.catastrofe_natural }}</li>
+                        <li><strong>Reposicion de Electrodomesticos:150000</strong> {{ departamento_dos_amb.reposicion_de_electrodomesticos }}</li>
+                        <li><strong>Robo:150000</strong> {{ departamento_dos_amb.robo}}</li>
+                        <li><strong>Daños en la vivienda:150000</strong> {{ departamento_dos_amb.daños_vivienda }}</li>                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-black">
+                    <h3>Departamento Tres Ambientes</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:510</strong> {{ departamento_tres_amb.precio }}</li>
+                        <li><strong>Incendio:1500000</strong> {{ departamento_tres_amb.incendio }}</li>
+                        <li><strong>Catastrofe Natural:1000000</strong> {{ departamento_tres_amb.catastrofe_natural }}</li>
+                        <li><strong>Reposicion de Electrodomesticos:150000</strong> {{ departamento_tres_amb.reposicion_de_electrodomesticos }}</li>
+                        <li><strong>Robo:150000</strong> {{ departamento_tres_amb.robo}}</li>
+                        <li><strong>Daños en la vivienda:150000</strong> {{ departamento_tres_amb.daños_vivienda }}</li>                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-black">
+                    <h3>Departamento Cuatro Ambientes</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:510</strong> {{ departamento_cuatro_amb.precio }}</li>
+                        <li><strong>Incendio:1500000</strong> {{ departamento_cuatro_amb.incendio }}</li>
+                        <li><strong>Catastrofe Natural:1000000</strong> {{ departamento_cuatro_amb.catastrofe_natural }}</li>
+                        <li><strong>Reposicion de Electrodomesticos:150000</strong> {{ departamento_cuatro_amb.reposicion_de_electrodomesticos }}</li>
+                        <li><strong>Robo:150000</strong> {{ departamento_cuatro_amb.robo}}</li>
+                        <li><strong>Daños en la vivienda:150000</strong> {{ departamento_cuatro_amb.daños_vivienda }}</li>                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-black">
+                    <h3>Casa</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:510</strong> {{ casa.precio }}</li>
+                        <li><strong>Incendio:1500000</strong> {{ casa.incendio }}</li>
+                        <li><strong>Catastrofe Natural:1000000</strong> {{ casa.catastrofe_natural }}</li>
+                        <li><strong>Reposicion de Electrodomesticos:150000</strong> {{ casa.reposicion_de_electrodomesticos }}</li>
+                        <li><strong>Robo:150000</strong> {{ casa.robo}}</li>
+                        <li><strong>Daños en la vivienda:150000</strong> {{ casa.daños_vivienda }}</li>                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-black">
+                    <h3>PH</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual:510</strong> {{ ph.precio }}</li>
+                        <li><strong>Incendio:1500000</strong> {{ ph.incendio }}</li>
+                        <li><strong>Catastrofe Natural:1000000</strong> {{ ph.catastrofe_natural }}</li>
+                        <li><strong>Reposicion de Electrodomesticos:150000</strong> {{ ph.reposicion_de_electrodomesticos }}</li>
+                        <li><strong>Robo:150000</strong> {{ ph.robo}}</li>
+                        <li><strong>Daños en la vivienda:150000</strong> {{ ph.daños_vivienda }}</li>                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <a href= '/home' class="btn btn-info">Volver al Inicio</a>
+    <br>
+
+
+
+
+{% endblock contenido %}

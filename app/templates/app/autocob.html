@@ -1,0 +1,60 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Tipos de coberturas de AUTO</p>
+<p class="lead text-white-50 mb-4">Aca te mostramos los planes entre los cuales podes elegir segun tu necesidad</p>
+<p class="lead text-white-50 mb-4">Para terminar tu proceso de suscripcion, ahora que tenes toda la informacion comunicate con nosotros al 0810-999-9999 de Lunes a Viernes de 8 a 19hs</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-black">
+                    <h3>Todo Riesgo</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual: 20000 <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.precio }}</li>
+                        <li><strong>Responsabilidad Civil <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.responsabilidad_civil}}</li>
+                        <li><strong>Daño por Incendio o Robo Total <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.daño_incendio_robototal}}</li>
+                        <li><strong>Daño parcial por robo <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.daño_parcial_por_robo}}</li>
+                        <li><strong>Cerraduras <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.cerraduras}}</li>
+                        <li><strong>Cristales Laterales <i class="fas fa-check" style="color: green;"></i><strong> {{ todo_riesgo.cristales_laterales}}</li>
+                        <li><strong>Daño Por Granizo <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.daño_por_granizo}}</li>
+                        <li><strong>Reposicion 0km <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.reposicion_0km}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-black">
+                    <h3>Cobertura Parcial</h3>
+                </div>
+                <div class="card-body">
+                    <ul ul class="list-unstyled">
+                        <li><strong>Precio Mensual: 100000 <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.precio }}</li>
+                        <li><strong>Responsabilidad Civil <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.responsabilidad_civil}}</li>
+                        <li><strong>Daño por Incendio o Robo Total <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.daño_incendio_robototal}}</li>
+                        <li><strong>Daño parcial por robo <i class="fas fa-check green-check"></i></strong> {{ todo_riesgo.daño_parcial_por_robo}}</li>
+                        <li><strong>Cerraduras <i class="fas fa-times" style="color:red;"></i></strong> {{ todo_riesgo.cerraduras}}</li>
+                        <li><strong>Cristales Laterales <i class="fas fa-times" style="color:red;"></i><strong> {{ todo_riesgo.cristales_laterales}}</li>
+                        <li><strong>Daño Por Granizo <i class="fas fa-times" style="color:red;"></i></strong> {{ todo_riesgo.daño_por_granizo}}</li>
+                        <li><strong>Reposicion 0km <i class="fas fa-check" style="color: green;"></i></strong> {{ todo_riesgo.reposicion_0km}}</li>            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <a href= '/home' class="btn btn-warning">Volver al Inicio</a>
+
+
+
+{% endblock contenido %}

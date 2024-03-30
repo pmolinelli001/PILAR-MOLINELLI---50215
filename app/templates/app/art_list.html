@@ -1,0 +1,63 @@
+{%extends "app/index.html"%}
+
+{%block titulo%}
+<p class="lead text-white-50 mb-4">Con nuestros seguros laborales, trabaja tranquilo, vive seguro. Obtén una cotización personalizada y selecciona la protección ideal para ti</p>
+
+{%endblock titulo%}
+
+{%block contenido%}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Profesion-Oficio</th>
+            <th>Codigo_postal</th>
+            <th>Matricula</th>
+            <th>Año</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in art_list %}
+        <tr>
+            <td>{{ a.id }}</td>           
+            <td>{{ a.profesion_oficio }}</td>
+            <td>{{ a.codigo_postal }}</td>
+            <td>{{ a.matricula }}</td>
+            <td>{{ a.año }}</td>
+            <td>
+                <a
+                  href="{% url 'artUpdate' a.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'artDelete' a.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <br>
+
+    <a href= '/artCreate' class="btn btn-success">Suscribirme</a>
+
+
+    <br>
+    <br>
+
+    <br>
+
+    <a href= '/home' class="btn btn-success">Volver al Inicio</a>
+
+    <br>
+    <br>
+</table>
+
+
+{% endblock contenido %}
